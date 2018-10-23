@@ -1,0 +1,180 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: auto;
+  width: 675px;
+  height: auto;
+  float: left;
+  padding: 20px;
+}
+
+.button {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.otherinfo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  float: left;
+  height: 200px;
+  width: 700px;
+}
+
+button {
+  width: 20%;
+  height: 25%;
+  margin-left: 15%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+  margin-top: 0;
+  border-radius: 30%;
+  background: lightgreen;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px black;
+  font-family: 'Mali', cursive;
+  color: black;
+  /* text-shadow: 2px 2px 1px black; */
+}
+
+button:hover {
+  box-shadow: 5px 5px 15px black;
+  background-color: lawngreen;
+}
+
+button:active {
+  background-color: lawngreen;
+  transform: translateY(4px);
+  box-shadow: 10px 10px 15px black;
+}
+
+p {
+  width: 25%;
+  height: 15%;
+  margin-top: 8.5%;
+  text-align: left;
+  text-align: center;
+  font-size: 1.3em;
+  font-family: 'Mali', cursive;
+}
+
+body {
+  background: lightblue;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+h1 {
+  width: 50%;
+  height: 30%;
+  font-size: 3em;
+  text-align: center;
+  font-family: 'Mali', cursive;
+  text-decoration: underline;
+}
+
+header {
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#redButton {
+  background: red;
+  box-shadow: 2px 2px 2px black;
+}
+
+#redButton:hover {
+  box-shadow: 5px 5px 15px black;
+}
+
+#redButton:active {
+  background-color: #F08080;
+  transform: translateY(8px);
+  box-shadow: 10px 10px 15px black;
+}
+
+#blueButton {
+  background: blue;
+  box-shadow: 2px 2px 2px black;
+}
+
+#blueButton:hover {
+  box-shadow: 5px 5px 15px black;
+}
+
+#blueButton:active {
+  background-color: deepskyblue;
+  transform: translateY(8px);
+  box-shadow: 10px 10px 15px black;
+}
+
+#greenButton {
+  background: green;
+  box-shadow: 2px 2px 2px black;
+}
+
+#greenButton:hover {
+  box-shadow: 5px 5px 15px black;
+}
+
+#greenButton:active {
+  background-color: #00FF7F;
+  transform: translateY(8px);
+  box-shadow: 10px 10px 15px black;
+}
+
+#purpleButton {
+  background: purple;
+  box-shadow: 2px 2px 2px black;
+}
+
+#purpleButton:hover {
+  box-shadow: 5px 5px 15px black;
+}
+
+#purpleButton:active {
+  background-color: #EE82EE;
+  transform: translateY(8px);
+  box-shadow: 10px 10px 15px black;
+}
+
+#orangeButton {
+  background: orange;
+  box-shadow: 2px 2px 2px black;
+}
+
+#orangeButton:hover {
+  box-shadow: 5px 5px 15px black;
+}
+
+#orangeButton:active {
+  background-color: #FFCF9E;
+  transform: translateY(8px);
+  box-shadow: 10px 10px 15px black;
+}
+
+#yellowButton {
+  background: yellow;
+  box-shadow: 2px 2px 2px black;
+}
+
+#yellowButton:hover {
+  box-shadow: 5px 5px 15px black;
+}
+
+#yellowButton:active {
+  background-color: #FFFFCC;
+  transform: translateY(8px);
+  box-shadow: 10px 10px 15px black;
+}
