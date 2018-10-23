@@ -7,6 +7,7 @@
   <title>Simon Says</title>
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Lobster|Mali|Niramit|Oswald|Shadows+Into+Light" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
   <header class='gamename'>
@@ -14,10 +15,8 @@
   <main>
     <div class ='otherinfo'>
       <h1>Simon Says</h1>
-      <p class = 'turn-count'>Player's Turn</p>
-      <p class = 'level-count'>Level 1</p>
-      <button class = 'start-button'>START</button>
-      <button class = 'hard-button'>HARD MODE</button>
+      <p class = 'turn-count'>Computer's Turn</p>
+      <p class = 'level'>Level:<p class = 'level-count'>1</p></p>
     </div>
     <div class='flex-container'>
       <div id='redButton' class='button'></div>
@@ -26,6 +25,10 @@
       <div id='purpleButton' class='button'></div>
       <div id='orangeButton' class='button'></div>
       <div id='yellowButton' class='button'></div>
+    </div>
+    <div class = 'otherinfo2'>
+      <button class = 'start-button'>START</button>
+      <button class = 'hard-button'>HARD MODE</button>
     </div>
   </main>
 </body>

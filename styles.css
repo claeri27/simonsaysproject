@@ -22,23 +22,36 @@
   flex-wrap: wrap;
   position: relative;
   float: left;
-  height: 200px;
+  height: 100px;
   width: 700px;
+  margin-bottom: 2%;
+}
+
+.otherinfo2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  float: left;
+  height: 150px;
+  width: 700px;
+  align-items: center;
 }
 
 button {
-  width: 20%;
-  height: 25%;
-  margin-left: 15%;
-  margin-right: 10%;
+  width: 35%;
+  height: 50%;
+  margin-left: 8%;
+  margin-right: 5%;
   margin-bottom: 5%;
-  margin-top: 0;
+  margin-top: 5%;
   border-radius: 30%;
   background: lightgreen;
-  font-size: 1.2em;
+  font-size: 2em;
   font-weight: bold;
   border: 1px solid black;
   box-shadow: 2px 2px 2px black;
+  text-shadow: 2px 2px 2px grey;
   font-family: 'Mali', cursive;
   color: black;
   /* text-shadow: 2px 2px 1px black; */
@@ -47,6 +60,7 @@ button {
 button:hover {
   box-shadow: 5px 5px 15px black;
   background-color: lawngreen;
+  transform: translateX(-2px);
 }
 
 button:active {
@@ -56,13 +70,30 @@ button:active {
 }
 
 p {
-  width: 25%;
+  width: 23%;
   height: 15%;
   margin-top: 8.5%;
   text-align: left;
   text-align: center;
   font-size: 1.3em;
   font-family: 'Mali', cursive;
+  text-shadow: 2px 2px 2px grey;
+}
+
+.level {
+  width: 15%;
+}
+
+.level-count {
+  width: 2%;
+  font-size: 3em;
+  margin-top: 4.8%;
+  text-align: left;
+  color: black;
+}
+
+.turn-count {
+  margin-top: 7%;
 }
 
 body {
@@ -78,6 +109,7 @@ h1 {
   text-align: center;
   font-family: 'Mali', cursive;
   text-decoration: underline;
+  text-shadow: 2px 2px 2px grey;
 }
 
 header {
@@ -91,90 +123,128 @@ main {
 
 #redButton {
   background: red;
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 3px 3px 3px black;
 }
 
 #redButton:hover {
   box-shadow: 5px 5px 15px black;
+  transform: translateY(-4px);
 }
 
 #redButton:active {
   background-color: #F08080;
-  transform: translateY(8px);
+  transform: translateY(6px);
   box-shadow: 10px 10px 15px black;
 }
 
 #blueButton {
   background: blue;
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 3px 3px 3px black;
 }
 
 #blueButton:hover {
   box-shadow: 5px 5px 15px black;
+  transform: translateY(-4px);
 }
 
 #blueButton:active {
   background-color: deepskyblue;
-  transform: translateY(8px);
+  transform: translateY(6px);
   box-shadow: 10px 10px 15px black;
 }
 
 #greenButton {
   background: green;
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 3px 3px 3px black;
 }
 
 #greenButton:hover {
   box-shadow: 5px 5px 15px black;
+  transform: translateY(-4px);
 }
 
 #greenButton:active {
   background-color: #00FF7F;
-  transform: translateY(8px);
+  transform: translateY(6px);
   box-shadow: 10px 10px 15px black;
 }
 
 #purpleButton {
   background: purple;
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 3px 3px 3px black;
 }
 
 #purpleButton:hover {
   box-shadow: 5px 5px 15px black;
+  transform: translateY(-4px);
 }
 
 #purpleButton:active {
   background-color: #EE82EE;
-  transform: translateY(8px);
+  transform: translateY(6px);
   box-shadow: 10px 10px 15px black;
 }
 
 #orangeButton {
   background: orange;
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 3px 3px 3px black;
 }
 
 #orangeButton:hover {
   box-shadow: 5px 5px 15px black;
+  transform: translateY(-4px);
 }
 
 #orangeButton:active {
   background-color: #FFCF9E;
-  transform: translateY(8px);
+  transform: translateY(6px);
   box-shadow: 10px 10px 15px black;
 }
 
 #yellowButton {
   background: yellow;
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 3px 3px 3px black;
 }
 
 #yellowButton:hover {
   box-shadow: 5px 5px 15px black;
+  transform: translateY(-4px);
 }
 
 #yellowButton:active {
   background-color: #FFFFCC;
-  transform: translateY(8px);
+  transform: translateY(6px);
   box-shadow: 10px 10px 15px black;
+}
+
+@media (max-width: 425px){
+  .flex-container {
+    width: 600px;
+    left: 0;
+    margin-left: 150px;
+  }
+
+  .otherinfo2 {
+    margin-left: 100px;
+  }
+
+  .button {
+    width: 225px;
+    height: 225px;
+    margin: 20px;
+  }
+
+  h1 {
+    padding-left: 50px;
+  }
+
+  p {
+    width: 150px;
+  }
+
+  body {
+  }
+
+  main {
+  }
 }
