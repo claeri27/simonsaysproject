@@ -13,7 +13,6 @@ const yellowButton = document.querySelector('#yellowButton');
 
 //Variables that may change//
 let compPattern = [];
-let newCompMove;
 let playerPattern = [];
 let hard = null;
 let winStatus = null;
@@ -38,6 +37,7 @@ hardCheck();
 
 //---------------FUNCTIONS---------------------//
 
+//startGame and hardCheck give click actions to the start and hardmode buttons//
 function startGame() {
   startButton.addEventListener('click', computerTurn);
 }
@@ -46,6 +46,7 @@ function hardCheck() {
   hardButton.addEventListener('click', hardMode);
 }
 
+// hardMode gives hardButton functionality to put game in/out of hard mode//
 function hardMode() {
   if(hard === null || hard === false) {
     hardButton.style.backgroundColor = 'red';
@@ -59,8 +60,10 @@ function hardMode() {
   console.log('hard pressed');
 }
 
+//computerTurn is the AI's turn//
 function computerTurn() {
   if(levelCount.innerHTML === '1') {
+    turnText.innerHTML = 'AI Turn';
     for(let i=0;i<3;i++){
       compPattern.push(Math.floor(Math.random() * Math.floor(6)));
     }
@@ -89,22 +92,22 @@ function computerTurn() {
   } else {
       switch (compPattern.push(Math.floor(Math.random() * Math.floor(6)))) {
         case 0:
-          redButton.click();
+          console.log('red click');
           break;
         case 1:
-          blueButton.click();
+          console.log('red click');
           break;
         case 2:
-          greenButton.click();
+          console.log('red click');
           break;
         case 3:
-          purpleButton.click();
+          console.log('red click');
           break;
         case 4:
-          orangeButton.click();
+          console.log('red click');
           break;
         case 5:
-          yellowButton.click();
+          console.log('red click');
           break;
         }
     }
@@ -113,17 +116,21 @@ function computerTurn() {
   playerInput();
 }
 
+//playerInput tests users input button presses towards computer picks//
 function playerInput() {
   if(playerTurnStatus === true) {
+    turnText.innerHTML = 'Your Turn!';
     redButton.onclick = (x => {
       playerPattern.push(0);
       if(isEqual() === true) {
         if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
           levelCount.innerHTML++;
+          playerTurnStatus = false;
+          playerPattern = [];
           computerTurn();
         } else {
           winStatus = false;
-          if(winStatus === false) alert('Sorry. You lose.');
+          if(winStatus === false) loser();
         }
       }
     });
@@ -132,10 +139,12 @@ function playerInput() {
       if(isEqual() === true) {
         if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
           levelCount.innerHTML++;
+          playerTurnStatus = false;
+          playerPattern = [];
           computerTurn();
         } else {
           winStatus = false;
-          if(winStatus === false) alert('Sorry. You lose.');
+          if(winStatus === false) loser();
         }
       }
     });
@@ -144,10 +153,12 @@ function playerInput() {
       if(isEqual() === true) {
         if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
           levelCount.innerHTML++;
+          playerTurnStatus = false;
+          playerPattern = [];
           computerTurn();
         } else {
           winStatus = false;
-          if(winStatus === false) alert('Sorry. You lose.');
+          if(winStatus === false) loser();
         }
       }
     });
@@ -156,10 +167,12 @@ function playerInput() {
       if(isEqual() === true) {
         if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
           levelCount.innerHTML++;
+          playerTurnStatus = false;
+          playerPattern = [];
           computerTurn();
         } else {
           winStatus = false;
-          if(winStatus === false) alert('Sorry. You lose.');
+          if(winStatus === false) loser();
         }
       }
     });
@@ -168,10 +181,12 @@ function playerInput() {
       if(isEqual() === true) {
         if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
           levelCount.innerHTML++;
+          playerTurnStatus = false;
+          playerPattern = [];
           computerTurn();
         } else {
           winStatus = false;
-          if(winStatus === false) alert('Sorry. You lose.');
+          if(winStatus === false) loser();
         }
       }
     });
@@ -180,19 +195,27 @@ function playerInput() {
       if(isEqual() === true) {
         if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
           levelCount.innerHTML++;
+          playerTurnStatus = false;
+          playerPattern = [];
           computerTurn();
         } else {
           winStatus = false;
-          if(winStatus === false) alert('Sorry. You lose.');
+          if(winStatus === false) loser();
         }
       }
     });
   }
-  playerTurnStatus = false;
 }
 
+//isEqual checks whether the player has pressed the amount of buttons as the AI//
 function isEqual() {
   console.log('this is player:', playerPattern.length);
   console.log('this is comp:', compPattern.length);
   if(playerPattern.length === compPattern.length) return true;
+}
+
+//loser controls what happens when the player loses/inputs incorrect match//
+function loser() {
+  alert('Sorry. You lose.');
+  location.reload();
 }

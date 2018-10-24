@@ -125,7 +125,7 @@ p {
 }
 
 .turn-count {
-  margin-top: 7%;
+  margin-top: 8.5%;
 }
 
 body {
@@ -137,11 +137,11 @@ body {
 h1 {
   width: 50%;
   height: 30%;
-  font-size: 3em;
-  text-align: center;
-  font-family: 'Mali', cursive;
+  font-size: 3.5em;
+  text-align: right;
+  font-family: 'Lobster';
   text-decoration: underline;
-  text-shadow: 2px 2px 2px grey;
+  /* text-shadow: 2px 2px 2px grey; */
 }
 
 header {
