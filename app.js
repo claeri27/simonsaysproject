@@ -74,53 +74,17 @@ function computerTurn() {
     for(let i=0;i<3;i++){
       compPattern.push(Math.floor(Math.random() * Math.floor(6)));
     }
-    let i=0;
-    let intervalID = setInterval(x => {
-      if(compPattern.length === i) {
-        playerInput();
-        return clearInterval(intervalID)
-      };
-      switch (compPattern[i]) {
-        case 0:
-          redTimeout();
-          break;
-        case 1:
-          blueTimeout();
-          break;
-        case 2:
-          greenTimeout();
-          break;
-        case 3:
-          purpleTimeout();
-          break;
-        case 4:
-          orangeTimeout();
-          break;
-        case 5:
-          yellowTimeout();
-          break;
-      }
-      i++;
-    }, 3000)
-  } else {
+    thing();
+    } else {
+      turnText.innerHTML = 'AI Turn';
       switch (compPattern.push(Math.floor(Math.random() * Math.floor(6)))) {
         case 0:
-          redTimeout();
-          break;
         case 1:
-          blueTimeout();
-          break;
         case 2:
-          greenTimeout();
-          break;
         case 3:
-          purpleTimeout();
-          break;
         case 4:
-          orangeTimeout();
-          break;
         case 5:
-          yellowTimeout();
+          thing();
           break;
         }
     }
@@ -237,7 +201,7 @@ function redTimeout() {
   redButton.style = redButtonPressed;
   setTimeout(x => {
     redButton.style = origRed;
-  }, 2000);
+  }, 1300);
 }
 
 function blueTimeout() {
@@ -245,7 +209,7 @@ function blueTimeout() {
   blueButton.style = blueButtonPressed;
   setTimeout(x => {
     blueButton.style = origBlue;
-  }, 2000);
+  }, 1300);
 }
 
 function greenTimeout() {
@@ -253,7 +217,7 @@ function greenTimeout() {
   greenButton.style = greenButtonPressed;
   setTimeout(x => {
     greenButton.style = origGreen;
-  }, 2000);
+  }, 1300);
 }
 
 function purpleTimeout() {
@@ -261,7 +225,7 @@ function purpleTimeout() {
   purpleButton.style = purpleButtonPressed;
   setTimeout(x => {
     purpleButton.style = origPurple;
-  }, 3000);
+  }, 1300);
 }
 
 function orangeTimeout() {
@@ -269,7 +233,7 @@ function orangeTimeout() {
   orangeButton.style = orangeButtonPressed;
   setTimeout(x => {
     orangeButton.style = origOrange;
-  }, 2000);
+  }, 1300);
 }
 
 function yellowTimeout() {
@@ -277,5 +241,36 @@ function yellowTimeout() {
   yellowButton.style = yellowButtonPressed;
   setTimeout(x => {
     yellowButton.style = origYellow;
-  }, 2000);
+  }, 1300);
 }
+
+function thing() {
+  let i=0;
+  let intervalID = setInterval(x => {
+    if(compPattern.length === i) {
+      playerInput();
+      return clearInterval(intervalID)
+    };
+    switch (compPattern[i]) {
+      case 0:
+        redTimeout();
+        break;
+      case 1:
+        blueTimeout();
+        break;
+      case 2:
+        greenTimeout();
+        break;
+      case 3:
+        purpleTimeout();
+        break;
+      case 4:
+        orangeTimeout();
+        break;
+      case 5:
+        yellowTimeout();
+        break;
+    }
+    i++;
+  }, 2500)
+};
