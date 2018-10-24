@@ -17,6 +17,13 @@ let playerPattern = [];
 let hard = null;
 let winStatus = null;
 let playerTurnStatus = false;
+let redButtonPressed = 'background-color: #F08080;transform: translateY(6px);box-shadow: 10px 10px 15px black;';
+let blueButtonPressed = 'background-color: deepskyblue;transform: translateY(6px);box-shadow: 10px 10px 15px black;';
+let greenButtonPressed = 'background-color: #00FF7F;transform: translateY(6px);box-shadow: 10px 10px 15px black;';
+let purpleButtonPressed = 'background-color: #EE82EE;transform: translateY(6px);box-shadow: 10px 10px 15px black;';
+let orangeButtonPressed = 'background-color: #FFCF9E;transform: translateY(6px);box-shadow: 10px 10px 15px black;';
+let yellowButtonPressed = 'background-color: #FFFFCC;transform: translateY(6px);box-shadow: 10px 10px 15px black;';
+
 
 //Console logs to make sure buttons are getting pressed properly//
 if(playerTurnStatus === false) {
@@ -67,53 +74,58 @@ function computerTurn() {
     for(let i=0;i<3;i++){
       compPattern.push(Math.floor(Math.random() * Math.floor(6)));
     }
-    for(let i=0;i<compPattern.length;i++) {
+    let i=0;
+    let intervalID = setInterval(x => {
+      if(compPattern.length === i) {
+        playerInput();
+        return clearInterval(intervalID)
+      };
       switch (compPattern[i]) {
         case 0:
-          redButton.click();
+          redTimeout();
           break;
         case 1:
-          blueButton.click();
+          blueTimeout();
           break;
         case 2:
-          greenButton.click();
+          greenTimeout();
           break;
         case 3:
-          purpleButton.click();
+          purpleTimeout();
           break;
         case 4:
-          orangeButton.click();
+          orangeTimeout();
           break;
         case 5:
-          yellowButton.click();
+          yellowTimeout();
           break;
       }
-    }
+      i++;
+    }, 3000)
   } else {
       switch (compPattern.push(Math.floor(Math.random() * Math.floor(6)))) {
         case 0:
-          console.log('red click');
+          redTimeout();
           break;
         case 1:
-          console.log('red click');
+          blueTimeout();
           break;
         case 2:
-          console.log('red click');
+          greenTimeout();
           break;
         case 3:
-          console.log('red click');
+          purpleTimeout();
           break;
         case 4:
-          console.log('red click');
+          orangeTimeout();
           break;
         case 5:
-          console.log('red click');
+          yellowTimeout();
           break;
         }
     }
   console.log(compPattern);
   playerTurnStatus = true;
-  playerInput();
 }
 
 //playerInput tests users input button presses towards computer picks//
@@ -218,4 +230,52 @@ function isEqual() {
 function loser() {
   alert('Sorry. You lose.');
   location.reload();
+}
+
+function redTimeout() {
+  let origRed = redButton.style;
+  redButton.style = redButtonPressed;
+  setTimeout(x => {
+    redButton.style = origRed;
+  }, 2000);
+}
+
+function blueTimeout() {
+  let origBlue = blueButton.style;
+  blueButton.style = blueButtonPressed;
+  setTimeout(x => {
+    blueButton.style = origBlue;
+  }, 2000);
+}
+
+function greenTimeout() {
+  let origGreen = greenButton.style;
+  greenButton.style = greenButtonPressed;
+  setTimeout(x => {
+    greenButton.style = origGreen;
+  }, 2000);
+}
+
+function purpleTimeout() {
+  let origPurple = purpleButton.style;
+  purpleButton.style = purpleButtonPressed;
+  setTimeout(x => {
+    purpleButton.style = origPurple;
+  }, 3000);
+}
+
+function orangeTimeout() {
+  let origOrange = orangeButton.style;
+  orangeButton.style = orangeButtonPressed;
+  setTimeout(x => {
+    orangeButton.style = origOrange;
+  }, 2000);
+}
+
+function yellowTimeout() {
+  let origYellow = yellowButton.style;
+  yellowButton.style = yellowButtonPressed;
+  setTimeout(x => {
+    yellowButton.style = origYellow;
+  }, 2000);
 }

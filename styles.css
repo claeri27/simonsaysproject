@@ -52,7 +52,7 @@
   font-weight: bold;
   border: 1px solid black;
   box-shadow: 2px 2px 2px black;
-  text-shadow: 2px 2px 2px grey;
+  /* text-shadow: 2px 2px 2px grey; */
   font-family: 'Mali', cursive;
   color: black;
   /* text-shadow: 2px 2px 1px black; */
@@ -83,7 +83,7 @@
   font-weight: bold;
   border: 1px solid black;
   box-shadow: 2px 2px 2px black;
-  text-shadow: 2px 2px 2px grey;
+  /* text-shadow: 2px 2px 2px grey; */
   font-family: 'Mali', cursive;
   color: black;
   /* text-shadow: 2px 2px 1px black; */
