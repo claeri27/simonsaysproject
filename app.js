@@ -1,6 +1,7 @@
 // Constant variables pointing to elements in html //
 const startButton = document.querySelector('.start-button');
 const hardButton = document.querySelector('.hard-button');
+const allButtons = document.querySelectorAll('.button');
 const turnText = document.querySelector('.turn-count');
 const titleText = document.querySelector('h1');
 const levelCount = document.querySelector('.level-count');
@@ -17,12 +18,12 @@ let playerPattern = [];
 let hard = null;
 let winStatus = null;
 let playerTurnStatus = false;
-let redButtonPressed = 'background-color: #F08080;transform: translateY(6px);box-shadow: 10px 10px 15px black;';
-let blueButtonPressed = 'background-color: deepskyblue;transform: translateY(6px);box-shadow: 10px 10px 15px black;';
-let greenButtonPressed = 'background-color: #00FF7F;transform: translateY(6px);box-shadow: 10px 10px 15px black;';
-let purpleButtonPressed = 'background-color: #EE82EE;transform: translateY(6px);box-shadow: 10px 10px 15px black;';
-let orangeButtonPressed = 'background-color: #FFCF9E;transform: translateY(6px);box-shadow: 10px 10px 15px black;';
-let yellowButtonPressed = 'background-color: #FFFFCC;transform: translateY(6px);box-shadow: 10px 10px 15px black;';
+let redButtonPressed = 'transform: translateY(10px);box-shadow: inset -5px -5px 60px black;';
+let blueButtonPressed = 'transform: translateY(10px);box-shadow: inset -5px -5px 60px black;';
+let greenButtonPressed = 'transform: translateY(10px);box-shadow: inset -5px -5px 60px black;';
+let purpleButtonPressed = 'transform: translateY(10px);box-shadow: inset -5px -5px 60px black;';
+let orangeButtonPressed = 'transform: translateY(10px);box-shadow: inset -5px -5px 60px black;';
+let yellowButtonPressed = 'transform: translateY(10px);box-shadow: inset -5px -5px 60px black;';
 
 
 //Console logs to make sure buttons are getting pressed properly//
@@ -41,6 +42,7 @@ if(playerTurnStatus === false) {
 //Calling functions to give start and hard buttons functionality//
 startGame();
 hardCheck();
+
 
 //---------------FUNCTIONS---------------------//
 
@@ -70,23 +72,17 @@ function hardMode() {
 //computerTurn is the AI's turn//
 function computerTurn() {
   if(levelCount.innerHTML === '1') {
+    disableUserInput();
     turnText.innerHTML = 'AI Turn';
     for(let i=0;i<3;i++){
       compPattern.push(Math.floor(Math.random() * Math.floor(6)));
     }
     thing();
     } else {
+      disableUserInput();
       turnText.innerHTML = 'AI Turn';
-      switch (compPattern.push(Math.floor(Math.random() * Math.floor(6)))) {
-        case 0:
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-          thing();
-          break;
-        }
+      compPattern.push(Math.floor(Math.random() * Math.floor(6)));
+      thing();
     }
   console.log(compPattern);
   playerTurnStatus = true;
@@ -101,6 +97,7 @@ function playerInput() {
       if(isEqual() === true) {
         if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
           levelCount.innerHTML++;
+          // levelCountColor();
           playerTurnStatus = false;
           playerPattern = [];
           computerTurn();
@@ -115,6 +112,7 @@ function playerInput() {
       if(isEqual() === true) {
         if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
           levelCount.innerHTML++;
+          // levelCountColor();
           playerTurnStatus = false;
           playerPattern = [];
           computerTurn();
@@ -129,6 +127,7 @@ function playerInput() {
       if(isEqual() === true) {
         if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
           levelCount.innerHTML++;
+          // levelCountColor();
           playerTurnStatus = false;
           playerPattern = [];
           computerTurn();
@@ -143,6 +142,7 @@ function playerInput() {
       if(isEqual() === true) {
         if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
           levelCount.innerHTML++;
+          // levelCountColor();
           playerTurnStatus = false;
           playerPattern = [];
           computerTurn();
@@ -157,6 +157,7 @@ function playerInput() {
       if(isEqual() === true) {
         if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
           levelCount.innerHTML++;
+          // levelCountColor();
           playerTurnStatus = false;
           playerPattern = [];
           computerTurn();
@@ -171,6 +172,7 @@ function playerInput() {
       if(isEqual() === true) {
         if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
           levelCount.innerHTML++;
+          // levelCountColor();
           playerTurnStatus = false;
           playerPattern = [];
           computerTurn();
@@ -185,8 +187,6 @@ function playerInput() {
 
 //isEqual checks whether the player has pressed the amount of buttons as the AI//
 function isEqual() {
-  console.log('this is player:', playerPattern.length);
-  console.log('this is comp:', compPattern.length);
   if(playerPattern.length === compPattern.length) return true;
 }
 
@@ -201,7 +201,7 @@ function redTimeout() {
   redButton.style = redButtonPressed;
   setTimeout(x => {
     redButton.style = origRed;
-  }, 1300);
+  }, 800);
 }
 
 function blueTimeout() {
@@ -209,7 +209,7 @@ function blueTimeout() {
   blueButton.style = blueButtonPressed;
   setTimeout(x => {
     blueButton.style = origBlue;
-  }, 1300);
+  }, 800);
 }
 
 function greenTimeout() {
@@ -217,7 +217,7 @@ function greenTimeout() {
   greenButton.style = greenButtonPressed;
   setTimeout(x => {
     greenButton.style = origGreen;
-  }, 1300);
+  }, 700);
 }
 
 function purpleTimeout() {
@@ -225,7 +225,7 @@ function purpleTimeout() {
   purpleButton.style = purpleButtonPressed;
   setTimeout(x => {
     purpleButton.style = origPurple;
-  }, 1300);
+  }, 800);
 }
 
 function orangeTimeout() {
@@ -233,7 +233,7 @@ function orangeTimeout() {
   orangeButton.style = orangeButtonPressed;
   setTimeout(x => {
     orangeButton.style = origOrange;
-  }, 1300);
+  }, 800);
 }
 
 function yellowTimeout() {
@@ -241,7 +241,7 @@ function yellowTimeout() {
   yellowButton.style = yellowButtonPressed;
   setTimeout(x => {
     yellowButton.style = origYellow;
-  }, 1300);
+  }, 800);
 }
 
 function thing() {
@@ -272,5 +272,41 @@ function thing() {
         break;
     }
     i++;
-  }, 2500)
+  }, 1600)
 };
+
+function levelCountColor() {
+  switch (Number(levelCount.innerHTML)) {
+    case 1:
+    case 2:
+    case 3:
+      levelCount.style.color = 'lightgreen';
+      break;
+    case 4:
+    case 5:
+    case 6:
+      levelCount.style.color = 'yellow';
+      break;
+    case 7:
+    case 8:
+    case 9:
+      levelCount.style.color = 'red';
+      break;
+  }
+}
+
+function disableUserInput() {
+  if(playerTurnStatus === false) {
+    for(let i =0;i<allButtons.length;i++) {
+      allButtons[i].style.pointerEvents = 'none';
+    }
+    startButton.style.pointerEvents = 'none';
+    hardButton.style.pointerEvents = 'none';
+  } else {
+    for(let i =0;i<allButtons.length;i++) {
+      allButtons[i].style.pointerEvents = 'all';
+    }
+    startButton.style.pointerEvents = 'all';
+    hardButton.style.pointerEvents = 'all';
+  }
+}

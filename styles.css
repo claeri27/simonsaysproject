@@ -7,6 +7,7 @@
   height: auto;
   float: left;
   padding: 20px;
+  padding-top: 0px;
 }
 
 .button {
@@ -24,7 +25,9 @@
   float: left;
   height: 100px;
   width: 700px;
-  margin-bottom: 2%;
+  margin-bottom: 3%;
+  border-bottom: 4px solid black;
+  padding-bottom: 1%;
 }
 
 .otherinfo2 {
@@ -122,6 +125,7 @@ p {
   margin-top: 4.8%;
   text-align: left;
   color: black;
+  font-weight: bolder;
 }
 
 .turn-count {
@@ -137,10 +141,10 @@ body {
 h1 {
   width: 50%;
   height: 30%;
-  font-size: 3.5em;
+  font-size: 3.2em;
   text-align: right;
   font-family: 'Lobster';
-  text-decoration: underline;
+  /* text-decoration: underline; */
   /* text-shadow: 2px 2px 2px grey; */
 }
 
@@ -151,119 +155,147 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 40px;
+  bottom: 0;
 }
 
 #redButton {
+  box-shadow: 3px 3px 10px black;
   background: red;
-  box-shadow: 3px 3px 3px black;
+  /* box-shadow: 3px 3px 3px black; */
 }
 
 #redButton:hover {
-  box-shadow: 5px 5px 15px black;
-  transform: translateY(-4px);
+  box-shadow: 8px 8px 15px black;
+  transform: translateY(-8px);
 }
 
 #redButton:active {
-  background-color: #F08080;
-  transform: translateY(6px);
-  box-shadow: 10px 10px 15px black;
+  transform: translateY(10px);
+  box-shadow: inset -5px -5px 60px black;
 }
 
 #blueButton {
+  box-shadow: 3px 3px 10px black;
   background: blue;
-  box-shadow: 3px 3px 3px black;
+  /* box-shadow: 3px 3px 3px black; */
 }
 
 #blueButton:hover {
-  box-shadow: 5px 5px 15px black;
-  transform: translateY(-4px);
+  box-shadow: 8px 8px 15px black;
+  transform: translateY(-8px);
 }
 
 #blueButton:active {
-  background-color: deepskyblue;
-  transform: translateY(6px);
-  box-shadow: 10px 10px 15px black;
+  transform: translateY(10px);
+  box-shadow: inset -5px -5px 60px black;
 }
 
 #greenButton {
+  box-shadow: 3px 3px 10px black;
   background: green;
-  box-shadow: 3px 3px 3px black;
+  /* box-shadow: 3px 3px 3px black; */
 }
 
 #greenButton:hover {
-  box-shadow: 5px 5px 15px black;
-  transform: translateY(-4px);
+  box-shadow: 8px 8px 15px black;
+  transform: translateY(-8px);
 }
 
 #greenButton:active {
-  background-color: #00FF7F;
-  transform: translateY(6px);
-  box-shadow: 10px 10px 15px black;
+  transform: translateY(10px);
+  box-shadow: inset -5px -5px 60px black;
 }
 
 #purpleButton {
+  box-shadow: 3px 3px 10px black;
   background: purple;
-  box-shadow: 3px 3px 3px black;
+  /* box-shadow: 3px 3px 3px black; */
 }
 
 #purpleButton:hover {
-  box-shadow: 5px 5px 15px black;
-  transform: translateY(-4px);
+  box-shadow: 8px 8px 15px black;
+  transform: translateY(-8px);
 }
 
 #purpleButton:active {
-  background-color: #EE82EE;
-  transform: translateY(6px);
-  box-shadow: 10px 10px 15px black;
+  transform: translateY(10px);
+  box-shadow: inset -5px -5px 60px black;
 }
 
 #orangeButton {
+  box-shadow: 3px 3px 10px black;
   background: orange;
-  box-shadow: 3px 3px 3px black;
+  /* box-shadow: 3px 3px 3px black; */
 }
 
 #orangeButton:hover {
-  box-shadow: 5px 5px 15px black;
-  transform: translateY(-4px);
+  box-shadow: 8px 8px 15px black;
+  transform: translateY(-8px);
 }
 
 #orangeButton:active {
-  background-color: #FFCF9E;
-  transform: translateY(6px);
-  box-shadow: 10px 10px 15px black;
+  transform: translateY(10px);
+  box-shadow: inset -5px -5px 60px black;
 }
 
 #yellowButton {
+  box-shadow: 3px 3px 10px black;
   background: yellow;
-  box-shadow: 3px 3px 3px black;
+  /* box-shadow: 3px 3px 3px black; */
 }
 
 #yellowButton:hover {
-  box-shadow: 5px 5px 15px black;
-  transform: translateY(-4px);
+  box-shadow: 8px 8px 15px black;
+  transform: translateY(-8px);
 }
 
 #yellowButton:active {
-  background-color: #FFFFCC;
-  transform: translateY(6px);
-  box-shadow: 10px 10px 15px black;
+  transform: translateY(10px);
+  box-shadow: inset -5px -5px 60px black;
 }
 
 @media (max-width: 425px){
   .flex-container {
-    width: 600px;
-    left: 0;
-    margin-left: 150px;
+    width: 700px;
+    margin: 0px;
+    margin-left: 145px;
+    border: 0px;
+    padding: 0px;
   }
 
   .otherinfo2 {
     margin-left: 100px;
+    bottom: 0;
+    border-top: 4px solid grey;
   }
 
   .button {
-    width: 225px;
-    height: 225px;
-    margin: 20px;
+    width: 285px;
+    height: 285px;
+    margin-left: 20px;
+  }
+
+  .start-button {
+    border: 0px;
+    margin: 0px;
+    width: 50%;
+    height: 100vh;
+    border-radius: 0;
+    bottom: 0;
+    font-size: 4.5em;
+    padding-top: 50px;
+  }
+
+  .hard-button {
+    border: 0px;
+    margin: 0px;
+    width: 49%;
+    height: 100vh;
+    border-radius: 0;
+    bottom: 0;
+    font-size: 4.5em;
+    padding-top: 10px;
   }
 
   h1 {
