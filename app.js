@@ -248,6 +248,8 @@ function thing() {
   let i=0;
   let intervalID = setInterval(x => {
     if(compPattern.length === i) {
+      playerTurnStatus === true;
+      disableUserInput();
       playerInput();
       return clearInterval(intervalID)
     };
@@ -302,7 +304,7 @@ function disableUserInput() {
     }
     startButton.style.pointerEvents = 'none';
     hardButton.style.pointerEvents = 'none';
-  } else {
+  } else if (playerTurnStatus === true){
     for(let i =0;i<allButtons.length;i++) {
       allButtons[i].style.pointerEvents = 'all';
     }
