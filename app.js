@@ -1,6 +1,7 @@
 // Constant variables pointing to elements in html //
 const startButton = document.querySelector('.start-button');
 const hardButton = document.querySelector('.hard-button');
+const popUp = document.querySelector('#popup');
 const allButtons = document.querySelectorAll('.button');
 const turnText = document.querySelector('.turn-count');
 const titleText = document.querySelector('h1');
@@ -13,17 +14,18 @@ const orangeButton = document.querySelector('#orangeButton');
 const yellowButton = document.querySelector('#yellowButton');
 
 //Variables that may change//
+let grid = [redButton,blueButton,greenButton,purpleButton,orangeButton,yellowButton];
 let compPattern = [];
 let playerPattern = [];
 let hard = null;
 let winStatus = null;
 let playerTurnStatus = false;
-let redButtonPressed = 'transform: translateY(10px);box-shadow: inset -5px -5px 60px black;';
-let blueButtonPressed = 'transform: translateY(10px);box-shadow: inset -5px -5px 60px black;';
-let greenButtonPressed = 'transform: translateY(10px);box-shadow: inset -5px -5px 60px black;';
-let purpleButtonPressed = 'transform: translateY(10px);box-shadow: inset -5px -5px 60px black;';
-let orangeButtonPressed = 'transform: translateY(10px);box-shadow: inset -5px -5px 60px black;';
-let yellowButtonPressed = 'transform: translateY(10px);box-shadow: inset -5px -5px 60px black;';
+let redButtonPressed = 'transform: translateY(8px);box-shadow: inset -5px -5px 80px black;';
+let blueButtonPressed = 'transform: translateY(8px);box-shadow: inset -5px -5px 80px black;';
+let greenButtonPressed = 'transform: translateY(8px);box-shadow: inset -5px -5px 80px black;';
+let purpleButtonPressed = 'transform: translateY(8px);box-shadow: inset -5px -5px 80px black;';
+let orangeButtonPressed = 'transform: translateY(8px);box-shadow: inset -5px -5px 80px black;';
+let yellowButtonPressed = 'transform: translateY(8px);box-shadow: inset -5px -5px 80px black;';
 
 
 //Console logs to make sure buttons are getting pressed properly//
@@ -59,11 +61,11 @@ function hardCheck() {
 function hardMode() {
   if(hard === null || hard === false) {
     hardButton.style.backgroundColor = 'red';
+    hardButton.style.boxShadow = 'inset -2px -2px 25px black';
     hard = true;
   } else {
-    hardButton.style.backgroundColor = 'lightgreen';
+    hardButton.style.backgroundColor = '#00cd00';
     hardButton.style.transformY = '0px';
-    hardButton.style.border = '1px solid black';
     hard = false;
   }
   console.log('hard pressed');
@@ -74,6 +76,7 @@ function computerTurn() {
   if(levelCount.innerHTML === '1') {
     disableUserInput();
     turnText.innerHTML = 'AI Turn';
+    startButton.innerHTML = 'REPLAY';
     for(let i=0;i<3;i++){
       compPattern.push(Math.floor(Math.random() * Math.floor(6)));
     }
@@ -92,96 +95,37 @@ function computerTurn() {
 function playerInput() {
   if(playerTurnStatus === true) {
     turnText.innerHTML = 'Your Turn!';
+    disableUserInput();
     redButton.onclick = (x => {
       playerPattern.push(0);
-      if(isEqual() === true) {
-        if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
-          levelCount.innerHTML++;
-          // levelCountColor();
-          playerTurnStatus = false;
-          playerPattern = [];
-          computerTurn();
-        } else {
-          winStatus = false;
-          if(winStatus === false) loser();
-        }
-      }
-    });
+      otherThing();
+    })
+    ;
     blueButton.onclick = (x => {
       playerPattern.push(1);
-      if(isEqual() === true) {
-        if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
-          levelCount.innerHTML++;
-          // levelCountColor();
-          playerTurnStatus = false;
-          playerPattern = [];
-          computerTurn();
-        } else {
-          winStatus = false;
-          if(winStatus === false) loser();
-        }
-      }
-    });
+      otherThing();
+    })
+    ;
     greenButton.onclick = (x => {
       playerPattern.push(2);
-      if(isEqual() === true) {
-        if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
-          levelCount.innerHTML++;
-          // levelCountColor();
-          playerTurnStatus = false;
-          playerPattern = [];
-          computerTurn();
-        } else {
-          winStatus = false;
-          if(winStatus === false) loser();
-        }
-      }
-    });
+      otherThing();
+    })
+    ;
     purpleButton.onclick = (x => {
       playerPattern.push(3);
-      if(isEqual() === true) {
-        if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
-          levelCount.innerHTML++;
-          // levelCountColor();
-          playerTurnStatus = false;
-          playerPattern = [];
-          computerTurn();
-        } else {
-          winStatus = false;
-          if(winStatus === false) loser();
-        }
-      }
-    });
+      otherThing();
+    })
+    ;
     orangeButton.onclick = (x => {
       playerPattern.push(4);
-      if(isEqual() === true) {
-        if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
-          levelCount.innerHTML++;
-          // levelCountColor();
-          playerTurnStatus = false;
-          playerPattern = [];
-          computerTurn();
-        } else {
-          winStatus = false;
-          if(winStatus === false) loser();
-        }
-      }
-    });
+      otherThing();
+    })
+    ;
     yellowButton.onclick = (x => {
       playerPattern.push(5);
-      if(isEqual() === true) {
-        if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
-          levelCount.innerHTML++;
-          // levelCountColor();
-          playerTurnStatus = false;
-          playerPattern = [];
-          computerTurn();
-        } else {
-          winStatus = false;
-          if(winStatus === false) loser();
-        }
-      }
-    });
+      otherThing();
+    })
+    ;
   }
 }
 
@@ -201,7 +145,7 @@ function redTimeout() {
   redButton.style = redButtonPressed;
   setTimeout(x => {
     redButton.style = origRed;
-  }, 800);
+  }, 1000);
 }
 
 function blueTimeout() {
@@ -209,7 +153,7 @@ function blueTimeout() {
   blueButton.style = blueButtonPressed;
   setTimeout(x => {
     blueButton.style = origBlue;
-  }, 800);
+  }, 1000);
 }
 
 function greenTimeout() {
@@ -217,7 +161,7 @@ function greenTimeout() {
   greenButton.style = greenButtonPressed;
   setTimeout(x => {
     greenButton.style = origGreen;
-  }, 700);
+  }, 1000);
 }
 
 function purpleTimeout() {
@@ -225,7 +169,7 @@ function purpleTimeout() {
   purpleButton.style = purpleButtonPressed;
   setTimeout(x => {
     purpleButton.style = origPurple;
-  }, 800);
+  }, 1000);
 }
 
 function orangeTimeout() {
@@ -233,7 +177,7 @@ function orangeTimeout() {
   orangeButton.style = orangeButtonPressed;
   setTimeout(x => {
     orangeButton.style = origOrange;
-  }, 800);
+  }, 1000);
 }
 
 function yellowTimeout() {
@@ -241,7 +185,7 @@ function yellowTimeout() {
   yellowButton.style = yellowButtonPressed;
   setTimeout(x => {
     yellowButton.style = origYellow;
-  }, 800);
+  }, 1000);
 }
 
 function thing() {
@@ -251,7 +195,7 @@ function thing() {
       playerTurnStatus === true;
       disableUserInput();
       playerInput();
-      return clearInterval(intervalID)
+      clearInterval(intervalID);
     };
     switch (compPattern[i]) {
       case 0:
@@ -274,7 +218,7 @@ function thing() {
         break;
     }
     i++;
-  }, 1600)
+  }, 1500)
 };
 
 function levelCountColor() {
@@ -311,4 +255,28 @@ function disableUserInput() {
     startButton.style.pointerEvents = 'all';
     hardButton.style.pointerEvents = 'all';
   }
+}
+
+function otherThing() {
+  if(isEqual() === true) {
+    if(JSON.stringify(playerPattern) == JSON.stringify(compPattern)) {
+      levelCount.innerHTML++;
+      levelUpBox();
+      // levelCountColor();
+      playerTurnStatus = false;
+      playerPattern = [];
+      computerTurn();
+    } else {
+      winStatus = false;
+      if(winStatus === false) loser();
+    }
+  }
+}
+
+function levelUpBox() {
+  popUp.style.display = 'block';
+  popUp.innerHTML = `Level: ${Number(levelCount.innerHTML)}!`;
+  setTimeout(x => {
+    popUp.style.display = 'none';
+  }, 1000);
 }
