@@ -143,49 +143,85 @@ function loser() {
 function redTimeout() {
   let origRed = redButton.style;
   redButton.style = redButtonPressed;
-  setTimeout(x => {
-    redButton.style = origRed;
-  }, 1000);
+  if (hard === true) {
+    setTimeout(x => {
+      redButton.style = origRed;
+    }, 500);
+  } else {
+    setTimeout(x => {
+      redButton.style = origRed;
+    }, 1000)
+  }
 }
 
 function blueTimeout() {
   let origBlue = blueButton.style;
   blueButton.style = blueButtonPressed;
-  setTimeout(x => {
-    blueButton.style = origBlue;
-  }, 1000);
+  if (hard === true) {
+    setTimeout(x => {
+      blueButton.style = origBlue;
+    }, 500);
+  } else {
+    setTimeout(x => {
+      blueButton.style = origBlue;
+    }, 1000)
+  }
 }
 
 function greenTimeout() {
   let origGreen = greenButton.style;
   greenButton.style = greenButtonPressed;
-  setTimeout(x => {
-    greenButton.style = origGreen;
-  }, 1000);
+  if (hard === true) {
+    setTimeout(x => {
+      greenButton.style = origGreen;
+    }, 500);
+  } else {
+    setTimeout(x => {
+      greenButton.style = origGreen;
+    }, 1000)
+  }
 }
 
 function purpleTimeout() {
   let origPurple = purpleButton.style;
   purpleButton.style = purpleButtonPressed;
-  setTimeout(x => {
-    purpleButton.style = origPurple;
-  }, 1000);
+  if (hard === true) {
+    setTimeout(x => {
+      purpleButton.style = origPurple;
+    }, 500);
+  } else {
+    setTimeout(x => {
+      purpleButton.style = origPurple;
+    }, 1000)
+  }
 }
 
 function orangeTimeout() {
   let origOrange = orangeButton.style;
   orangeButton.style = orangeButtonPressed;
-  setTimeout(x => {
-    orangeButton.style = origOrange;
-  }, 1000);
+  if (hard === true) {
+    setTimeout(x => {
+      orangeButton.style = origOrange;
+    }, 500);
+  } else {
+    setTimeout(x => {
+      orangeButton.style = origOrange;
+    }, 1000)
+}
 }
 
 function yellowTimeout() {
   let origYellow = yellowButton.style;
   yellowButton.style = yellowButtonPressed;
-  setTimeout(x => {
-    yellowButton.style = origYellow;
-  }, 1000);
+  if (hard === true) {
+    setTimeout(x => {
+      yellowButton.style = origYellow;
+    }, 500);
+  } else {
+    setTimeout(x => {
+      yellowButton.style = origYellow;
+    }, 1000)
+  }
 }
 
 function thing() {
