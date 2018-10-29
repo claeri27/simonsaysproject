@@ -226,35 +226,67 @@ function yellowTimeout() {
 
 function thing() {
   let i=0;
-  let intervalID = setInterval(x => {
-    if(compPattern.length === i) {
-      playerTurnStatus === true;
-      disableUserInput();
-      playerInput();
-      clearInterval(intervalID);
-    };
-    switch (compPattern[i]) {
-      case 0:
-        redTimeout();
-        break;
-      case 1:
-        blueTimeout();
-        break;
-      case 2:
-        greenTimeout();
-        break;
-      case 3:
-        purpleTimeout();
-        break;
-      case 4:
-        orangeTimeout();
-        break;
-      case 5:
-        yellowTimeout();
-        break;
-    }
-    i++;
-  }, 1500)
+  if (hard === true) {
+    let intervalID = setInterval(x => {
+      if(compPattern.length === i) {
+        playerTurnStatus === true;
+        disableUserInput();
+        playerInput();
+        clearInterval(intervalID);
+      };
+      switch (compPattern[i]) {
+        case 0:
+          redTimeout();
+          break;
+        case 1:
+          blueTimeout();
+          break;
+        case 2:
+          greenTimeout();
+          break;
+        case 3:
+          purpleTimeout();
+          break;
+        case 4:
+          orangeTimeout();
+          break;
+        case 5:
+          yellowTimeout();
+          break;
+      }
+      i++;
+    }, 800)
+  } else {
+    let intervalID = setInterval(x => {
+      if(compPattern.length === i) {
+        playerTurnStatus === true;
+        disableUserInput();
+        playerInput();
+        clearInterval(intervalID);
+      };
+      switch (compPattern[i]) {
+        case 0:
+          redTimeout();
+          break;
+        case 1:
+          blueTimeout();
+          break;
+        case 2:
+          greenTimeout();
+          break;
+        case 3:
+          purpleTimeout();
+          break;
+        case 4:
+          orangeTimeout();
+          break;
+        case 5:
+          yellowTimeout();
+          break;
+      }
+      i++;
+    }, 1500)
+  }
 };
 
 function levelCountColor() {
